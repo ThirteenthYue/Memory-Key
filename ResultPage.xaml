@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Memory_Key.ResultPage"
+             Title=" ">
+
+    <ContentPage.Resources>
+        <!-- Background Gradient -->
+        <LinearGradientBrush x:Key="BackgroundGradient"
+                             StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+
+        <!-- Button Color -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Spacing="25" Padding="30">
+        <Label x:Name="score"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="70"
+            TextColor="Red"/>
+        <Label
+            x:Name="start"
+            Margin="0,0,0,60"/>
+
+        <Button x:Name="restart" 
+                Text="Restart" 
+                Clicked="OnRestartClicked" />
+
+        <Button x:Name="toMain" 
+                Text="MainPage" 
+                Clicked="OnToMainClicked" />
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

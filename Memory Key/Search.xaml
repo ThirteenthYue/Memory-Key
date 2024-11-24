@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Memory_Key.Search"
+             Title="Search"
+             >
+    <ContentPage.Resources>
+        <!-- Background Gradient -->
+        <LinearGradientBrush x:Key="BackgroundGradient"
+                             StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+
+        <!-- Button Color -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+    <VerticalStackLayout Spacing="25"
+                         Padding="30"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Fill">
+
+        <!-- A text box in which the user enters words -->
+        <Entry x:Name="wordEntry" 
+               Placeholder="Please enter a word"
+               FontSize="18"
+               HorizontalOptions="FillAndExpand" />
+
+        <!-- Button to get word definitions -->
+        <Button Text="Get Meaning"
+                Clicked="OnNewWordClicked" 
+                HorizontalOptions="FillAndExpand"/>
+
+
+        <Button x:Name="speakWord"
+                Text="Speak"
+                Clicked="OnSpeakButtonClicked"/>
+
+
+
+        <FlexLayout Direction="Row" 
+            JustifyContent="SpaceBetween" 
+            HorizontalOptions="FillAndExpand">
+            <Button x:Name="translateButton" 
+            Text="Translate Word" 
+            FlexLayout.Grow="1"
+            Clicked="TranslateButtonClicked" />
+            
+            <!-- blank area -->
+            <BoxView WidthRequest="20" BackgroundColor="Transparent"/>
+            <Button x:Name="translateButtonS" 
+            Text="Translate Meaning" 
+            FlexLayout.Grow="1"
+            Clicked="TranslateButtonClickedS" />
+        </FlexLayout>
+
+
+
+
+        <!-- show word -->
+        <Label x:Name="wordLabel"
+               Text=" "
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- translate word -->
+        <Label x:Name="translatedTextLabel" Text=" "
+               FontSize="24"
+               HorizontalOptions="Center"/>
+
+        <!-- show word meaning -->
+        <Label x:Name="wordMeaningLabel"
+               Text=" "
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+
+
+    </VerticalStackLayout>
+
+
+
+</ContentPage>

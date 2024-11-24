@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Memory_Key"
+       x:Class="Memory_Key.AppShell"
+       FlyoutBehavior="Disabled"
+       Shell.BackgroundColor="#b3d7ff">
+
+
+    <!-- tab -->
+    <TabBar>
+        <ShellContent Title="Main" Icon="home.png" Route="main" ContentTemplate="{DataTemplate local:MainPage}" />
+        <ShellContent Title="Search" Icon="search.png" Route="search" ContentTemplate="{DataTemplate local:Search}" />
+        <ShellContent Title="Time" Icon="setting.png" Route="settings" ContentTemplate="{DataTemplate local:TimePage}" />
+    </TabBar>
+
+    <!-- other -->
+
+    <ShellContent Route="study" ContentTemplate="{DataTemplate local:StartPage}" />
+    <ShellContent Route="learning" ContentTemplate="{DataTemplate local:WordLearningPage}" />
+    <ShellContent Route="result" ContentTemplate="{DataTemplate local:ResultPage}" />
+
+</Shell>
+    

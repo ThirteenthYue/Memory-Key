@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Memory_Key.StartPage" >
+
+    <ContentPage.Resources>
+        <!-- Background Gradient -->
+        <LinearGradientBrush x:Key="BackgroundGradient"
+                             StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+
+        <!-- Button Color -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
+            </Grid.GestureRecognizers>
+
+
+            <VerticalStackLayout Spacing="25"
+                         Padding="30"
+                         VerticalOptions="Start"
+                         HorizontalOptions="Fill">
+
+                <Image
+                Source="nagisa.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+                <Label 
+                    Text="How many words do you like"
+                    FontSize="30"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    Margin="0,0,0,50"/>
+
+                <Button Text="just give me 5"
+                    Clicked="On5Clicked" />
+
+                <Button Text="learn 10"
+                    Clicked="On10Clicked" />
+
+                <Button Text="Fifteen's no biggie"
+                    Clicked="On15Clicked" />
+
+                <Button Text="Easy, twenty please!"
+                    Clicked="On20Clicked" />
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Memory_Key.WordLearningPage"
+             Title=" ">
+
+    <ContentPage.Resources>
+        <!-- Background Gradient -->
+        <LinearGradientBrush x:Key="BackgroundGradient"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+
+        <!-- Button Color -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DeepSkyBlue" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#b3d7ff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
+            </Grid.GestureRecognizers>
+
+            <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+                <Label x:Name="WordLabel"
+                   FontAttributes="Bold"
+                   FontSize="36"
+                   HorizontalOptions="Center" />
+
+                <Label x:Name="DefinitionLabel"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+                <!-- A text box in which the user enters words -->
+                <Entry x:Name="wordEntry" 
+                    Placeholder="Please enter your answer"
+                    FontSize="18"
+                    HorizontalOptions="FillAndExpand" />
+
+                <Button x:Name="next"
+                    Text="Next"
+                    Clicked="OnNewWordClicked" />
+
+                <Button x:Name="speakWord"
+                Text="Speak"
+                Clicked="OnSpeakButtonClicked"/>
+
+                <Button x:Name="toggleButton" 
+                    Text="Show/hide words" 
+                    Clicked="OnToggleButtonClicked" 
+                    HorizontalOptions="FillAndExpand"/>
+
+                <Label x:Name= "ac"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+
+
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
